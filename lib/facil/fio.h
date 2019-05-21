@@ -430,7 +430,7 @@ Logging and testing helpers
 #define FIO_LOG_LENGTH_BORDER FIO_LOG_LENGTH_LIMIT
 #endif
 /** The logging level */
-int __attribute__((weak)) FIO_LOG_LEVEL;
+extern int FIO_LOG_LEVEL;
 
 #ifndef FIO_LOG_PRINT
 #define FIO_LOG_PRINT(level, ...)                                              \
@@ -2422,8 +2422,8 @@ void fio_rand_bytes(void *target, size_t length);
 
 /* defines the secret seed to be used by keyd hashing functions*/
 #ifndef FIO_HASH_SECRET_SEED64_1
-uint8_t __attribute__((weak)) fio_hash_secret_marker1;
-uint8_t __attribute__((weak)) fio_hash_secret_marker2;
+extern uint8_t fio_hash_secret_marker1;
+extern uint8_t fio_hash_secret_marker2;
 #define FIO_HASH_SECRET_SEED64_1 ((uintptr_t)&fio_hash_secret_marker1)
 #define FIO_HASH_SECRET_SEED64_2 ((uintptr_t)&fio_hash_secret_marker2)
 #endif

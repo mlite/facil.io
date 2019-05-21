@@ -225,6 +225,9 @@ int FIO_LOG_LEVEL = FIO_LOG_LEVEL_DEBUG;
 #else
 int FIO_LOG_LEVEL = FIO_LOG_LEVEL_INFO;
 #endif
+uint8_t fio_hash_secret_marker1;
+uint8_t fio_hash_secret_marker2;
+
 static fio_data_s *fio_data = NULL;
 
 /* used for protocol locking by task type. */
